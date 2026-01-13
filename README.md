@@ -1,0 +1,1 @@
+# delphi-cek-region-dan-region-format
