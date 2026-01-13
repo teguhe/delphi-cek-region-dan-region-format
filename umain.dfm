@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 181
+  ClientWidth = 431
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -29,5 +29,14 @@ object Form1: TForm1
     Lines.Strings = (
       'mmoStatus')
     TabOrder = 1
+  end
+  object btBukaPengaturan: TButton
+    Left = 8
+    Top = 143
+    Width = 417
+    Height = 25
+    Caption = 'Buka Pengaturan Region'
+    TabOrder = 2
+    OnClick = btBukaPengaturanClick
   end
 end

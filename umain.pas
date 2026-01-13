@@ -3,6 +3,8 @@ unit umain;
 interface
 
 uses
+  System.Diagnostics, Winapi.ShellAPI,
+
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
@@ -10,9 +12,13 @@ type
   TForm1 = class(TForm)
     btCek: TButton;
     mmoStatus: TMemo;
+    btBukaPengaturan: TButton;
     procedure CheckWindowsRegionSettings;
+//    procedure SetUSRegionAndFormat;
+//    procedure _ExecuteCommand(const Command: string);
     procedure FormCreate(Sender: TObject);
     procedure btCekClick(Sender: TObject);
+    procedure btBukaPengaturanClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +59,14 @@ begin
 
   // Validasi: Format harus English US ($0409) DAN Lokasi harus US (244)
   Result := (UserLCID = US_ENGLISH_LCID) and (GeoID = UNITED_STATES_GEOID);
+end;
+
+
+procedure TForm1.btBukaPengaturanClick(Sender: TObject);
+begin
+
+  ShellExecute(0, 'open', 'control', 'intl.cpl', nil, SW_SHOWNORMAL);
+
 end;
 
 procedure TForm1.btCekClick(Sender: TObject);
